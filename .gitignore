@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/a3/.vs/a3.slnx
+/a3/sample_output_gcc.txt
+/a3/sample_output_vs.txt
+/a3/a3.slnx
+/a3/a3.vcxproj
+/a3/a3.vcxproj.filters
+/a3/a3.vcxproj.user

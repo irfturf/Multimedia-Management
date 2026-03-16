@@ -15,13 +15,11 @@ namespace seneca {
         double m_price;
         //m_summary
 
-        Book() = default;
-        Book(const std::string& author, const std::string& title, const std::string& country, std::string& summary, unsigned short year, double price)
-            : MediaItem(title, summary, year), m_author(author), m_country(country), m_price(price) {}
-		~Book() = default;
+        Book(const std::string& author, const std::string& title, const std::string& country, 
+            const std::string& summary, unsigned short year, double price);
     public:
         void display(std::ostream& out) const override;
-        Book* createItem(const std::string& strBook);
+        static Book* createItem(const std::string& strBook);
     };
 }
 

@@ -1,0 +1,43 @@
+#ifndef SENECA_TVSHOW_H
+#define SENECA_TVSHOW_H
+#include <iostream>
+#include <string>
+#include <list>
+#include "mediaItem.h"
+
+namespace seneca
+{
+	class TvShow;
+    struct TvEpisode
+    {
+        const TvShow* m_show{};
+        unsigned short m_numberOverall{};
+        unsigned short m_season{};
+        unsigned short m_numberInSeason{};
+        std::string m_airDate{};
+        unsigned int m_length{};
+        std::string m_title{};
+        std::string m_summary{};
+    };
+    class TvShow :
+        public MediaItem
+    {
+        std::string m_id;
+        //title, year. summary
+        std::list<TvEpisode> m_episodes;
+        TvShow(const std::string& id, const std::string& title, const std::string& summary, 
+            unsigned short year);
+    public:
+        void display(std::ostream& out) const override;
+        static TvShow* createItem(const std::string& strShow);
+        template<typename Collection_t> 
+        static void addEpisode(Collection_t& col, const std::string& strEpisode)
+        {
+            
+        }
+        double getEpisodeAverageLength() const;
+        std::list<std::string> getLongEpisodes() const;
+    };
+}
+
+#endif

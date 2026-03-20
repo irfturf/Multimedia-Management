@@ -2,11 +2,11 @@
 #define SENECA_SETTINGS_H
 
 namespace seneca {
-	extern Settings g_settings;
 	struct Settings {
-		unsigned short m_maxSummaryWidth = 80;
-		bool m_tableView = false;
+		unsigned short m_maxSummaryWidth;
+		bool m_tableView;
 	};
+	extern Settings g_settings;
 }
 
 #endif
